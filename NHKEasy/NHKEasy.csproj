@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <PackAsTool>true</PackAsTool>
+    <DebugType>full</DebugType>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <NoWarn>$(NoWarn);SA0001;SA1200;SA1600;SA1633;</NoWarn>
+    <ToolCommandName>nhk-easy</ToolCommandName>
+    <PackageOutputPath>./nupkg</PackageOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta009" />
+  </ItemGroup>
+
+</Project>

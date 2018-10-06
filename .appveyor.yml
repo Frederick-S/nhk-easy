@@ -1,0 +1,5 @@
+image: Visual Studio 2017
+environment:
+  PROJECT_FILE: ./NHKEasy/NHKEasy.csproj
+build_script:
+  - cmd: dotnet build %PROJECT_FILE%
