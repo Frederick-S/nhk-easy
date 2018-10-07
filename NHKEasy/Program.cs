@@ -9,7 +9,7 @@ namespace NHKEasy
         {
             if (args.Length == 0)
             {
-                Console.WriteLine("Usage: nhk-easy url");
+                Console.WriteLine("Usage: nhk-easy id");
 
                 return;
             }
