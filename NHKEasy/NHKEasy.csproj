@@ -9,6 +9,14 @@
     <NoWarn>$(NoWarn);SA0001;SA1200;SA1600;SA1633;</NoWarn>
     <ToolCommandName>nhk-easy</ToolCommandName>
     <PackageOutputPath>./nupkg</PackageOutputPath>
+    <Description>Download audios from NHK NEWS WEB EASY.</Description>
+    <Copyright>MIT</Copyright>
+    <Company />
+    <Authors>Frederick-S</Authors>
+    <PackageLicenseUrl>https://github.com/Frederick-S/nhk-easy/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Frederick-S/nhk-easy</PackageProjectUrl>
+    <RepositoryUrl>git@github.com:Frederick-S/nhk-easy.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
