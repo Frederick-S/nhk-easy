@@ -16,7 +16,7 @@ namespace NHKEasy
 
             var id = args[0];
             var m3u8Url = $"https://nhks-vh.akamaihd.net/i/news/easy/{id}.mp4/master.m3u8";
-            var command = $"ffmpeg -y -i {m3u8Url} -codec:a libmp3lame -qscale:a 2 {id}.mp3";
+            var command = $"-y -i {m3u8Url} -codec:a libmp3lame -qscale:a 2 {id}.mp3";
 
             RunCommand(command);
         }
@@ -27,8 +27,8 @@ namespace NHKEasy
             {
                 StartInfo = new ProcessStartInfo
                 {
-                    FileName = "cmd.exe",
-                    Arguments = $"/c \"{command}\"",
+                    FileName = "ffmpeg",
+                    Arguments = command,
                     RedirectStandardInput = true,
                     RedirectStandardOutput = true,
                     UseShellExecute = false,
