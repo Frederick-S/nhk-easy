@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace NHKEasy
 {
@@ -6,7 +7,37 @@ namespace NHKEasy
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            if (args.Length == 0)
+            {
+                Console.WriteLine("Usage: nhk-easy url");
+
+                return;
+            }
+
+            var id = args[0];
+            var m3u8Url = $"https://nhks-vh.akamaihd.net/i/news/easy/{id}.mp4/master.m3u8";
+            var command = $"ffmpeg -y -i {m3u8Url} -codec:a libmp3lame -qscale:a 2 {id}.mp3";
+
+            RunCommand(command);
+        }
+
+        private static void RunCommand(string command)
+        {
+            var process = new Process()
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = "cmd.exe",
+                    Arguments = $"/c \"{command}\"",
+                    RedirectStandardInput = true,
+                    RedirectStandardOutput = true,
+                    UseShellExecute = false,
+                    WorkingDirectory = Environment.CurrentDirectory,
+                },
+            };
+
+            process.Start();
+            process.WaitForExit();
         }
     }
 }
