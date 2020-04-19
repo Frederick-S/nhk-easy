@@ -2,7 +2,7 @@
 Download audios from [NHK NEWS WEB EASY](https://www3.nhk.or.jp/news/easy/).
 
 ## Installation
-1. Install [FFmpeg](https://www.ffmpeg.org/)
+1. Install [FFmpeg](https://www.ffmpeg.org/) and add it to path
 2. `dotnet tool install --global NHKEasy`
 
 ## Usage
